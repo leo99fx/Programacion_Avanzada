@@ -79,6 +79,7 @@ public class Operaciones {
         long elapsedTimeAsignaciones = endTimeAsignaciones - startTimeAsignaciones;
         System.out.println("Tiempo para realizar 100.000.000 de asignaciones: " + elapsedTimeAsignaciones + " nanosegundos");
         System.out.println("PRUEBA 4to COMMIT");
+        System.out.println("FIN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
 	}
 }
