@@ -4,7 +4,7 @@ public class Ordenamiento {
 
 	public static void main(String[] args) {
 
-		int[] vec = { 99, 156485, 1258, 11, 22, 38, 1, 7, 2, 3 };
+		int[] vec = { 99, 156485, 1258, 18, 22, 38, 1, 7, 2, 3 };
 
 		for (int num : vec) {
 			System.out.print(num + " ");
