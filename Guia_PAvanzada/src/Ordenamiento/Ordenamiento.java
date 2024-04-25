@@ -65,6 +65,8 @@ public class Ordenamiento {
 	}
 
 	public static void OrdenarQuickSort(int[] vec) {
+		
+		
 
 	}
 
