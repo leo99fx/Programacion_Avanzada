@@ -1,17 +1,23 @@
 package Monticulo;
 
 public class Main {
-	public static void main(String[] args) {
-		Monticulo monticulo = new Monticulo(10);
-		monticulo.insertar(10);
-		monticulo.insertar(20);
+	public static void main(String[] args) throws Exception {
+		MiMonticulo monticulo = new MiMonticulo();
+		monticulo.insertar(5);
+		monticulo.insertar(7);
 		monticulo.insertar(15);
-		monticulo.insertar(30);
-		monticulo.insertar(25);
+		monticulo.insertar(14);
+		monticulo.insertar(9);
+		monticulo.insertar(18);
+		monticulo.insertar(20);
 
-		monticulo.mostrarMonticulo();
+		System.out.println("MONTICULO: ");
+		monticulo.mostrar();
 
-		System.out.println("Eliminando el valor máximo: " + monticulo.eliminar());
-		monticulo.mostrarMonticulo();
+		System.out.println();
+
+		System.out.println("Eliminando valor raiz: ");
+		monticulo.eliminar();
+		monticulo.mostrar();
 	}
 }
