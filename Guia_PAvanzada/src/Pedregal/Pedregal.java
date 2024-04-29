@@ -89,16 +89,34 @@ public class Pedregal {
 		int tamPedregalColumna = this.pedregal[0].length;
 
 		int coordenadaFila = 0, coordenadaColumna = 0;
-		char esPosible = 'N', orientacion = 'N';
+		String esPosible = "NO"; 
+		char orientacion = 'N';
 
 		// System.out.println(tamCasaColumna);
 
+		// recorro pedregal
+		for (int i = 0; i < tamPedregalFila-2; i++) {
+			for (int j = 0; j < tamPedregalColumna-1; j++) {
+				if (this.pedregal[i][j] == 0 && this.pedregal[i][j + 1] == 0 && this.pedregal[i + 1][j] == 0
+						&& this.pedregal[i + 1][j + 1] == 0 && this.pedregal[i + 2][j] == 0
+						&& this.pedregal[i + 2][j + 1] == 0) {
+					coordenadaFila = i;
+					coordenadaColumna = j;
+					esPosible = "SI";
+					break;
+				}
+			}
+		}
+		
+		//
+
 		// crear archivo salida
 		generarArchivo(coordenadaFila, coordenadaColumna, esPosible, orientacion);
+		imprimirSalida();
 
 	}
 
-	public void generarArchivo(int coordenadaFila, int coordenadaColumna, char esPosible, char orientacion) {
+	public void generarArchivo(int coordenadaFila, int coordenadaColumna, String esPosible, char orientacion) {
 
 		try {
 			String nombreArchivo = "../Guia_PAvanzada/src/Pedregal/pedregal.out";
@@ -115,6 +133,25 @@ public class Pedregal {
 			e.printStackTrace();
 		}
 
+	}
+	
+	public void imprimirSalida() {
+		try {
+			File archivo = new File("../Guia_PAvanzada/src/Pedregal/pedregal.out");
+
+			Scanner scanner = new Scanner(archivo);
+
+			 System.out.println("\nPEDREGAL.OUT");
+            while (scanner.hasNextLine()) {
+                String linea = scanner.nextLine();
+                System.out.println(linea);
+            }
+            scanner.close();
+
+		} catch (FileNotFoundException e) {
+			System.out.println("Archivo no encontrado");
+			e.printStackTrace();
+		}
 	}
 
 }
