@@ -5,5 +5,7 @@ public class Main {
 		Pedregal pedregal = new Pedregal();
 
 		pedregal.construirPedregal();
+		pedregal.procesarConstruccion();
+
 	}
 }
