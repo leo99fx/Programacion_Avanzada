@@ -23,7 +23,7 @@ public class Pedregal {
 	public void leerArchivo(int[][] pedregal, int[][] casa) {
 
 		// leo el archivo
-		// armo la matriz pedregal
+		// armo la matriz pedregal y casa
 
 		try {
 			File archivo = new File("../Guia_PAvanzada/src/Pedregal/pedregal.in");
@@ -82,10 +82,6 @@ public class Pedregal {
 	public void construirPedregal() {
 
 		leerArchivo(pedregal, casa); // leo el archivo y armo la matriz
-
-	}
-
-	public void procesarConstruccion() {
 
 		int tamCasaFila = this.casa.length;
 		int tamCasaColumna = this.casa[0].length;
