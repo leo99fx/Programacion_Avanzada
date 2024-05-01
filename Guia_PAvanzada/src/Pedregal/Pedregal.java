@@ -93,11 +93,12 @@ public class Pedregal {
 		char orientacion = 'N';
 
 		boolean espacioEncontrado = false;
+		boolean espacioLibre = true;
 
 		// recorro pedregal
 		for (int i = 0; i <= tamPedregalFila - tamCasaFila; i++) {
 			for (int j = 0; j <= tamPedregalColumna - tamCasaColumna; j++) {
-				boolean espacioLibre = true;
+				espacioLibre = true;
 				for (int k = 0; k < tamCasaFila; k++) {
 					for (int l = 0; l < tamCasaColumna; l++) {
 						if (pedregal[i + k][j + l] != 0) {
