@@ -95,6 +95,12 @@ public class Pedregal {
 		boolean espacioEncontrado = false;
 		boolean espacioLibre = true;
 
+		if ((tamCasaFila > tamPedregalFila || tamCasaColumna > tamPedregalColumna)
+				|| (tamCasaFila > tamPedregalColumna || tamCasaColumna > tamPedregalFila)) {
+			System.out.println("Espacio insuficiente");
+			return;
+		}
+
 		// recorro pedregal
 		for (int i = 0; i <= tamPedregalFila - tamCasaFila; i++) {
 			for (int j = 0; j <= tamPedregalColumna - tamCasaColumna; j++) {
