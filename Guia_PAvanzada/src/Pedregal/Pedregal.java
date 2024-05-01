@@ -89,26 +89,38 @@ public class Pedregal {
 		int tamPedregalColumna = this.pedregal[0].length;
 
 		int coordenadaFila = 0, coordenadaColumna = 0;
-		String esPosible = "NO"; 
+		String esPosible = "NO";
 		char orientacion = 'N';
 
-		// System.out.println(tamCasaColumna);
+		boolean espacioEncontrado = false;
 
 		// recorro pedregal
-		for (int i = 0; i < tamPedregalFila-2; i++) {
-			for (int j = 0; j < tamPedregalColumna-1; j++) {
-				if (this.pedregal[i][j] == 0 && this.pedregal[i][j + 1] == 0 && this.pedregal[i + 1][j] == 0
-						&& this.pedregal[i + 1][j + 1] == 0 && this.pedregal[i + 2][j] == 0
-						&& this.pedregal[i + 2][j + 1] == 0) {
+		for (int i = 0; i <= tamPedregalFila - tamCasaFila; i++) {
+			for (int j = 0; j <= tamPedregalColumna - tamCasaColumna; j++) {
+				boolean espacioLibre = true;
+				for (int k = 0; k < tamCasaFila; k++) {
+					for (int l = 0; l < tamCasaColumna; l++) {
+						if (pedregal[i + k][j + l] != 0) {
+							espacioLibre = false;
+							break;
+						}
+					}
+					if (!espacioLibre) {
+						break;
+					}
+				}
+				if (espacioLibre) {
 					coordenadaFila = i;
 					coordenadaColumna = j;
 					esPosible = "SI";
+					espacioEncontrado = true;
 					break;
 				}
 			}
+			if (espacioEncontrado) {
+				break;
+			}
 		}
-		
-		//
 
 		// crear archivo salida
 		generarArchivo(coordenadaFila, coordenadaColumna, esPosible, orientacion);
@@ -134,19 +146,19 @@ public class Pedregal {
 		}
 
 	}
-	
+
 	public void imprimirSalida() {
 		try {
 			File archivo = new File("../Guia_PAvanzada/src/Pedregal/pedregal.out");
 
 			Scanner scanner = new Scanner(archivo);
 
-			 System.out.println("\nPEDREGAL.OUT");
-            while (scanner.hasNextLine()) {
-                String linea = scanner.nextLine();
-                System.out.println(linea);
-            }
-            scanner.close();
+			System.out.println("\nPEDREGAL.OUT");
+			while (scanner.hasNextLine()) {
+				String linea = scanner.nextLine();
+				System.out.println(linea);
+			}
+			scanner.close();
 
 		} catch (FileNotFoundException e) {
 			System.out.println("Archivo no encontrado");
