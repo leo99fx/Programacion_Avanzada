@@ -123,6 +123,37 @@ public class Pedregal {
 			}
 		}
 
+		// pruebo si entra invertida
+		if (esPosible == "NO") {
+			for (int i = 0; i <= tamPedregalFila - tamCasaFila; i++) {
+				for (int j = 0; j <= tamPedregalColumna - tamCasaColumna; j++) {
+					espacioLibre = true;
+					for (int k = 0; k < tamCasaFila; k++) {
+						for (int l = 0; l < tamCasaColumna; l++) {
+							if (pedregal[i + k][j + l] != 0) {
+								espacioLibre = false;
+								break;
+							}
+						}
+						if (!espacioLibre) {
+							break;
+						}
+					}
+					if (espacioLibre) {
+						coordenadaFila = i;
+						coordenadaColumna = j;
+						esPosible = "SI";
+						espacioEncontrado = true;
+						break;
+					}
+				}
+				if (espacioEncontrado) {
+					break;
+				}
+			}
+
+		}
+
 		// crear archivo salida
 		generarArchivo(coordenadaFila, coordenadaColumna, esPosible, orientacion);
 		imprimirSalida();
