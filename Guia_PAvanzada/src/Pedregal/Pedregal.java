@@ -90,7 +90,7 @@ public class Pedregal {
 
 		int coordenadaFila = 0, coordenadaColumna = 0;
 		String esPosible = "NO";
-		char orientacion = 'N';
+		char orientacion = '-';
 
 		boolean espacioEncontrado = false;
 		boolean espacioLibre = true;
@@ -120,6 +120,7 @@ public class Pedregal {
 					coordenadaFila = i;
 					coordenadaColumna = j;
 					esPosible = "SI";
+					orientacion = 'O';
 					espacioEncontrado = true;
 					break;
 				}
@@ -149,6 +150,7 @@ public class Pedregal {
 						coordenadaFila = i;
 						coordenadaColumna = j;
 						esPosible = "SI";
+						orientacion = 'S';
 						espacioEncontrado = true;
 						break;
 					}
