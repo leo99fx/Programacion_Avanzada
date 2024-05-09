@@ -206,4 +206,81 @@ public class Ordenamiento {
 
 	}
 
+	public static void ordenarTimSort(int[] vec, int cantElemXGrupo) {
+
+		int tam = vec.length;
+
+		if (vec == null) {
+			return;
+		}
+
+		ordenarTimSort(vec, 0, tam - 1, cantElemXGrupo);
+
+	}
+
+	public static void ordenarTimSort(int[] vec, int izq, int der, int cantElemXGrupo) {
+
+		if (izq < der && (der - izq) >= cantElemXGrupo) {
+
+			int medio = (izq + der) / 2;
+
+			ordenarTimSort(vec, izq, medio, cantElemXGrupo);
+			ordenarTimSort(vec, medio + 1, der, cantElemXGrupo);
+
+			timsort(vec, izq, medio, der);
+
+		}
+
+	}
+
+	public static void timsort(int[] vec, int izq, int medio, int der) {
+
+		int n1 = medio - izq + 1;
+		int n2 = der - medio;
+
+		int[] vecAux1 = new int[n1]; // creo vectores del tamaño de cada sub array auxiliares
+		int[] vecAux2 = new int[n2];
+
+		// copio el contenido del vector original y sus sub array a los auxiliares
+
+		for (int i = 0; i < n1; i++) {
+			vecAux1[i] = vec[izq + i];
+		}
+
+		for (int i = 0; i < n2; i++) {
+			vecAux2[i] = vec[medio + i + 1];
+		}
+
+		// ordeno los subarray
+
+		insercion(vecAux1);
+		insercion(vecAux2);
+
+		int i = 0, j = 0; // indices arrayAux1 y 2
+
+		// copio primer parte igual y la 2da al revez
+
+		while (i < n1 && j < n2) {
+
+			vec[izq + i] = vecAux1[i];
+			vec[der - j] = vecAux2[i];
+			i++;
+			j++;
+		}
+
+		// ordeno por insercion
+		int n = der - izq + 1;
+
+		for (i = 0; i < n; i++) {
+			j = i;
+			while (j > 0 && vec[j - 1] > vec[j]) {
+				int aux = vec[j];
+				vec[j] = vec[j - 1];
+				vec[j - 1] = aux;
+				j--;
+			}
+		}
+
+	}
+
 }

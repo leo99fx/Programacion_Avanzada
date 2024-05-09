@@ -11,22 +11,27 @@ public class Main {
 			System.out.print(num + " ");
 		}
 
-		// System.out.print("\n ");
-		// System.out.print("\nOrdenamiento por Insercion: ");
-		// Ordenamiento.insercion(vec);
-
-		// System.out.print("\nOrdenamiento por Shell: ");
-		// Ordenamiento.OrdenamientoShell(vec);
-
-		// System.out.print("\n ");
-		// System.out.print("\nOrdenamiento por QuickSort: ");
-
-		// Ordenamiento.quicksortv2(vec, 0, vec.length - 1);
-
+//		System.out.print("\n ");
+//		System.out.print("\nOrdenamiento por Insercion: ");
+//		Ordenamiento.insercion(vec);
+//
+//		System.out.print("\nOrdenamiento por Shell: ");
+//		Ordenamiento.OrdenamientoShell(vec);
+//
+//		System.out.print("\n ");
+//		System.out.print("\nOrdenamiento por QuickSort: ");
+//
+//		Ordenamiento.quicksortv2(vec, 0, vec.length - 1);
+//
+//		System.out.print("\n ");
+//		System.out.print("\nOrdenamiento por Fusion - Merge: ");
+//
+//		Ordenamiento.ordenarFusion(vec);
+		
 		System.out.print("\n ");
-		System.out.print("\nOrdenamiento por Fusion - Merge: ");
+		System.out.print("\nOrdenamiento por TimSort: ");
 
-		Ordenamiento.ordenarFusion(vec, 0, vec.length - 1);
+		Ordenamiento.ordenarTimSort(vec,2);
 
 		for (int num : vec) {
 			System.out.print(num + " ");
