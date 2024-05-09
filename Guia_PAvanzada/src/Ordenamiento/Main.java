@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		int[] vec = { 8, 2, 6, 4, 1, 3, 7, 9 };
+		int[] vec = { 8, 2, 6, 4, 1, 3, 7, 9 ,5};
 
 		System.out.print("\nVector original: ");
 		for (int num : vec) {
@@ -23,15 +23,15 @@ public class Main {
 //
 //		Ordenamiento.quicksortv2(vec, 0, vec.length - 1);
 //
-//		System.out.print("\n ");
-//		System.out.print("\nOrdenamiento por Fusion - Merge: ");
-//
-//		Ordenamiento.ordenarFusion(vec);
-		
 		System.out.print("\n ");
-		System.out.print("\nOrdenamiento por TimSort: ");
+		System.out.print("\nOrdenamiento por Fusion - Merge: ");
 
-		Ordenamiento.ordenarTimSort(vec,2);
+		Ordenamiento.ordenarFusion(vec);
+
+//		System.out.print("\n ");
+//		System.out.print("\nOrdenamiento por TimSort: ");
+//
+//		Ordenamiento.ordenarTimSort(vec,2);
 
 		for (int num : vec) {
 			System.out.print(num + " ");

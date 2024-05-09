@@ -256,29 +256,33 @@ public class Ordenamiento {
 		insercion(vecAux1);
 		insercion(vecAux2);
 
-		int i = 0, j = 0; // indices arrayAux1 y 2
+		int i = 0, j = 0, k = izq; // indices arrayAux1 y 2
 
 		// copio primer parte igual y la 2da al revez
 
 		while (i < n1 && j < n2) {
-
-			vec[izq + i] = vecAux1[i];
-			vec[der - j] = vecAux2[i];
-			i++;
-			j++;
+			if (vecAux1[i] <= vecAux2[j]) {
+				vec[k] = vecAux1[i];
+				i++;
+			} else {
+				vec[k] = vecAux2[j];
+				j++;
+			}
+			k++;
 		}
 
-		// ordeno por insercion
-		int n = der - izq + 1;
+		// Copia los elementos restantes de vecAux1, si los hay
+		while (i < n1) {
+			vec[k] = vecAux1[i];
+			i++;
+			k++;
+		}
 
-		for (i = 0; i < n; i++) {
-			j = i;
-			while (j > 0 && vec[j - 1] > vec[j]) {
-				int aux = vec[j];
-				vec[j] = vec[j - 1];
-				vec[j - 1] = aux;
-				j--;
-			}
+		// Copia los elementos restantes de vecAux2, si los hay
+		while (j < n2) {
+			vec[k] = vecAux2[j];
+			j++;
+			k++;
 		}
 
 	}
