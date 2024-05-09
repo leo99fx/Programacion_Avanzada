@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		int[] vec = { 99, 156485, 1258, 18, 22, 38, 1, 7, 2, 3 };
+		int[] vec = { 8, 2, 6, 4, 1, 3, 7, 9 };
 
 		System.out.print("\nVector original: ");
 		for (int num : vec) {
@@ -16,18 +16,18 @@ public class Main {
 
 		System.out.print("\n ");
 		System.out.print("\nOrdenamiento por QuickSort: ");
-		
-		Ordenamiento.OrdenarQuickSort(vec, 0, vec.length - 1);
 
-		//Ordenamiento.quicksortv2(vec, 0, vec.length - 1);
+		Ordenamiento.ordenarFusion(vec, 0, vec.length - 1);
 
-		//System.out.print("\n ");
-		//System.out.print("\nOrdenamiento por Insercion: ");
-		//Ordenamiento.insercion(vec);
-		
+		// Ordenamiento.quicksortv2(vec, 0, vec.length - 1);
+
+		// System.out.print("\n ");
+		// System.out.print("\nOrdenamiento por Insercion: ");
+		// Ordenamiento.insercion(vec);
+
 		for (int num : vec) {
 			System.out.print(num + " ");
 		}
-		
+
 	}
 }
