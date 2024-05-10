@@ -16,7 +16,7 @@ public class Algoritmos {
 			return binarySearch(vec, elem, medio + 1, der);
 		}
 		return medio;
-	}
+	} // Complejidad T(n) = (log2 n)
 
 	public static int binarySearch(int[] vec, int elem) {
 		return binarySearch(vec, elem, 0, vec.length);
@@ -38,7 +38,7 @@ public class Algoritmos {
 			return x * calculoXN(x, n / 2) * calculoXN(x, n / 2);
 		}
 
-	}
+	} // COMPLEJIDAD O(log2 (n))
 
 	public static int sumaVector(int[] vec) {
 
@@ -56,6 +56,6 @@ public class Algoritmos {
 
 		return sumaVector(vec, izq, medio) + sumaVector(vec, medio + 1, der);
 
-	}
+	} // COMPLEJIDAD O(log2 (n))
 
 }

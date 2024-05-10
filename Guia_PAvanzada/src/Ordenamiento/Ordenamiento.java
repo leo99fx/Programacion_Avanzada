@@ -24,7 +24,7 @@ public class Ordenamiento {
 		while (h < n) {
 			aux = h;
 			h = (aux * 3) + 1;
-		}
+		} // O(n)
 
 		while (h >= 1) {
 
@@ -44,7 +44,7 @@ public class Ordenamiento {
 			h = (h - 1) / 3;
 		}
 
-	}
+	} // O(n^(3/2))
 
 	public static void OrdenarQuickSort(int[] vec, int ini, int fin) {
 
@@ -104,12 +104,11 @@ public class Ordenamiento {
 				arreglo[j] = temp;
 				i++;
 				j--;
-			}
-		}
+			} // O(n)
+		} while (i <= j);
 
-		while (i <= j);
 		if (primero < j)
-			quicksortv2(arreglo, primero, j);
+			quicksortv2(arreglo, primero, j); // T(n/2)
 		if (i < ultimo)
 			quicksortv2(arreglo, i, ultimo);
 	}
@@ -204,7 +203,7 @@ public class Ordenamiento {
 			vec[menor] = swap;
 		}
 
-	}
+	} // O(n) = n*log(n)
 
 	public static void ordenarTimSort(int[] vec, int cantElemXGrupo) {
 
@@ -285,6 +284,6 @@ public class Ordenamiento {
 			k++;
 		}
 
-	}
+	} // O(n) = n*log(n)
 
 }
