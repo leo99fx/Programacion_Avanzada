@@ -14,7 +14,6 @@ public class Programacion_Dinamica {
 			mem.put(key, n);
 		} else {
 			mem.put(key, fibonacci(n - 1, mem) + fibonacci(n - 2, mem));
-
 		}
 		return mem.get(key);
 	} // top down
@@ -120,8 +119,9 @@ public class Programacion_Dinamica {
 	public static void main(String[] args) {
 
 //		for (int i = 0; i < 100; i++) {
-//			System.out.println("Fibonacci de " + i + ": " + fibonacci(i));
+//			System.out.println("Fibonacci de " + i + ": " + fibonacci(5));
 //		}
+		System.out.println(fibonacci(5));
 
 //		int[] vec = { 2, 10, 3, 6, 8, 1, 7 };
 //
@@ -137,7 +137,7 @@ public class Programacion_Dinamica {
 //		System.out.println("MATRIZ LUEGO DE LA MINA:");
 //		imprimirMatriz(matriz);
 
-		System.out.println(fibonacci_BottonUp(3));
+		// System.out.println(fibonacci_BottonUp(3));
 
 	}
 
