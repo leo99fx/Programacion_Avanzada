@@ -17,11 +17,27 @@ public class Programacion_Dinamica {
 
 		}
 		return mem.get(key);
-	}
+	} // top down
 
 	public static int fibonacci(int n) {
 		return fibonacci(n, new HashMap<Integer, Integer>());
 
+	}
+
+	public static int fibonacci_BottonUp(int n) {
+		if (n < 2) {
+			return n;
+		}
+		int anteriorDelAnterior = 0;
+		int anterior = 1;
+		int actual = 1;
+
+		for (int i = 2; i <= n; i++) {
+			actual = anteriorDelAnterior + anterior;
+			anteriorDelAnterior = anterior;
+			anterior = actual;
+		}
+		return actual;
 	}
 
 	// EL LADRON DE CASAS
@@ -113,13 +129,15 @@ public class Programacion_Dinamica {
 //
 //		System.out.println(plata);
 
-		int[][] matriz = { { 3, 2, 12, 15, 10 }, { 6, 19, 7, 11, 17 }, { 8, 5, 12, 32, 21 }, { 3, 20, 2, 9, 7 } };
+//		int[][] matriz = { { 3, 2, 12, 15, 10 }, { 6, 19, 7, 11, 17 }, { 8, 5, 12, 32, 21 }, { 3, 20, 2, 9, 7 } };
+//
+//		System.out.println("MATRIZ ORIGINAL:");
+//		imprimirMatriz(matriz);
+//		System.out.println("MAXIMO ORO A SACAR: " + minaDeOro(matriz));
+//		System.out.println("MATRIZ LUEGO DE LA MINA:");
+//		imprimirMatriz(matriz);
 
-		System.out.println("MATRIZ ORIGINAL:");
-		imprimirMatriz(matriz);
-		System.out.println("MAXIMO ORO A SACAR: " + minaDeOro(matriz));
-		System.out.println("MATRIZ LUEGO DE LA MINA:");
-		imprimirMatriz(matriz);
+		System.out.println(fibonacci_BottonUp(3));
 
 	}
 
