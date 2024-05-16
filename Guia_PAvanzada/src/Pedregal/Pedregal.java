@@ -205,5 +205,9 @@ public class Pedregal {
 			e.printStackTrace();
 		}
 	}
+	
+	public void construirPedrevalv2() {
+		
+	}
 
 }
