@@ -23,15 +23,15 @@ public class Main {
 //
 //		Ordenamiento.quicksortv2(vec, 0, vec.length - 1);
 //
-		System.out.print("\n ");
-		System.out.print("\nOrdenamiento por Fusion - Merge: ");
-
-		Ordenamiento.ordenarFusion(vec);
-
 //		System.out.print("\n ");
-//		System.out.print("\nOrdenamiento por TimSort: ");
+//		System.out.print("\nOrdenamiento por Fusion - Merge: ");
 //
-//		Ordenamiento.ordenarTimSort(vec,2);
+//		Ordenamiento.ordenarFusion(vec);
+
+		System.out.print("\n ");
+		System.out.print("\nOrdenamiento por TimSort: ");
+
+		Ordenamiento.ordenarTimSort(vec,2);
 
 		for (int num : vec) {
 			System.out.print(num + " ");
