@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class ColoreoSecuencial {
 
-	private int cantVertices;
+	private static int cantVertices;
 	private int[][] matrizAdyacencia;
 
 	public ColoreoSecuencial(int[][] matriz) {
@@ -14,7 +14,7 @@ public class ColoreoSecuencial {
 		cantVertices = matriz.length;
 	}
 
-	public void colorear() {
+	public int[] colorear() {
 
 		int[] colorVertice = new int[this.cantVertices];
 		boolean[] verticeDisponible = new boolean[cantVertices];
@@ -41,12 +41,10 @@ public class ColoreoSecuencial {
 			Arrays.fill(verticeDisponible, true);
 
 		}
-
-		imprimir(colorVertice);
-
+		return colorVertice;
 	}
 
-	private void imprimir(int[] color) {
+	private static void imprimir(int[] color) {
 		System.out.println("Resultado de Coloreo de Vértices:");
 		for (int i = 0; i < cantVertices; i++)
 			System.out.println("Vértice " + i + " --->  Color " + color[i]);
@@ -69,7 +67,8 @@ public class ColoreoSecuencial {
 		};
 
 		ColoreoSecuencial grafo = new ColoreoSecuencial(matriz);
-		grafo.colorear();
+		int[] coloreo = grafo.colorear();
+		imprimir(coloreo);
 	}
 
 }
