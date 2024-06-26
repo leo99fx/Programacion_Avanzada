@@ -12,7 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		int[][] matrizAdyacencia = leerArchivo();
-		imprimirMatriz(matrizAdyacencia);
+		//imprimirMatriz(matrizAdyacencia);
 		Welsh_Powell grafo = new Welsh_Powell(matrizAdyacencia);
 		int[] resultadoColoreo = grafo.colorGraph();
 		int[] resultado = procesarColoreo(resultadoColoreo);
@@ -40,7 +40,7 @@ public class Main {
 	    int color = -1;
 	    for (int i = 0; i < colores.length; i++) { // Obtengo que color aparece mas y el nro de color
 	        if (colorMaximo < colores[i]) {
-	            colorMaximo = colores[i]; // Corregido: asignar colorMaximo en lugar de max
+	            colorMaximo = colores[i];
 	            color = i;
 	        }
 	    }
